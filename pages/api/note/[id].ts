@@ -7,6 +7,7 @@ export default async function handler(
 ) {
   const noteId = req.query.id
   const {title, content, id} = req.body
+  console.log(req.headers);
     // DELETE
     if (req.method === 'DELETE') {
         const note = await prisma.note.delete({
@@ -23,6 +24,7 @@ export default async function handler(
           content
         }
       })
+      console.log(note);
       res.status(200).json({ message: 'Note updated' })
     } 
     else {

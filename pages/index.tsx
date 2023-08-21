@@ -73,7 +73,7 @@ const Home: NextPage<Notes> = ({ notes }) => {
     }
   }
 
-  async function updateNote(title, content, id) {
+  async function updateNote(title: string, content: string, id: string) {
     //console.log(title, content, id)
     setForm({title, content, id})
     setNewNote(false)
@@ -107,7 +107,7 @@ const Home: NextPage<Notes> = ({ notes }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <h1 className="text-center font-bold text-2xl m-4">Notes</h1>
+      <h1 className="text-center font-bold text-2xl m-4">Courses</h1>
       <form className="w-auto min-w-[25%] max-w-min mx-auto space-y-6 flex flex-col items-stretch" 
         onSubmit={e => {
           e.preventDefault()
@@ -135,7 +135,7 @@ const Home: NextPage<Notes> = ({ notes }) => {
       </form>
 
       <div className="w-auto min-w-[25%] max-w-min mt-10 mx-auto space-y-6 flex flex-col items-stretch">
-        <h2 className="text-center font-bold text-xl mt-4">Saved Notes</h2>
+        <h2 className="text-center font-bold text-xl mt-4">Saved Courses</h2>
         <ul>
           {notes.map(note => (
             <li key={note.id} className="border-b border-gray-600 p-2">
